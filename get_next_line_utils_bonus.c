@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 04:42:33 by jgoldste          #+#    #+#             */
-/*   Updated: 2021/12/14 02:12:47 by jgoldste         ###   ########.fr       */
+/*   Updated: 2021/12/17 13:01:21 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 	str = (char *)malloc(sizeof(char)
 			* (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
 	if (!str)
+	{
+		free(s1);
 		return (NULL);
+	}
 	ft_strlcpy_gnl(str, s1);
 	ft_strlcat_gnl(str, s2);
 	while (*s2)
